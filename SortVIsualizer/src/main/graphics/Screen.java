@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.Random;
 
 import main.sort.InsertionSorter;
+import main.sort.MergeSorter;
 import main.sort.Sorter;
 
 public class Screen implements Runnable {
@@ -25,7 +26,8 @@ public class Screen implements Runnable {
 			array[i] = i + 1;
 		}
 		shuffle(array);
-		sorter = new InsertionSorter(array);
+		// sorter = new InsertionSorter(array);
+		sorter = new MergeSorter(array);
 	}
 
 	public void render() {
@@ -34,9 +36,10 @@ public class Screen implements Runnable {
 			for (int x = 0; x < width; x++) {
 				pixels[x + y * width] = 0x000000;
 			}
-			for (int i = 0; i < array.length; i++) {
-				renderBar(i, array[i]);
-			}
+
+		}
+		for (int i = 0; i < array.length; i++) {
+			renderBar(i, array[i]);
 		}
 	}
 
@@ -51,7 +54,7 @@ public class Screen implements Runnable {
 		int yFinish = height;
 		for (int y = yStart; y < yFinish; y++) {
 			for (int x = xStart; x < xFinish - 1; x++) {
-				pixels[x + y * width] = 0xFF6500 + size-1;
+				pixels[x + y * width] = 0xFF6500 + size - 1;
 			}
 		}
 	}
