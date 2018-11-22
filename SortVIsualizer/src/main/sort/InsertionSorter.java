@@ -11,9 +11,10 @@ public class InsertionSorter extends Sorter {
 
 		for (int i = 0; i < array.length; i++) {
 			int key = array[i];
-			playSound(key, 50);
+			playSound(key, 1);
 			int j = i - 1;
 			while (j >= 0 && array[j] > key) {
+				playSound(array[j],1);
 				int temp = array[j];
 				array[j] = array[j + 1];
 				array[j + 1] = temp;

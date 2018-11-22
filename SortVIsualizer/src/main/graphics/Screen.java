@@ -1,15 +1,16 @@
 package main.graphics;
 
-import java.awt.Color;
 import java.util.Random;
 
+import main.sort.BubbleSorter;
 import main.sort.InsertionSorter;
 import main.sort.MergeSorter;
+import main.sort.SelectionSorter;
 import main.sort.Sorter;
 
 public class Screen implements Runnable {
 
-	private Sorter sorter;
+	private Sorter[] sorters;
 	public int[] pixels;
 	public int[] array;
 	private int width;
@@ -26,8 +27,11 @@ public class Screen implements Runnable {
 			array[i] = i + 1;
 		}
 		shuffle(array);
-		// sorter = new InsertionSorter(array);
-		sorter = new MergeSorter(array);
+		sorters = new Sorter[4];
+		sorters[0] = new BubbleSorter(array);
+		sorters[1] = new InsertionSorter(array);
+		sorters[2] = new MergeSorter(array);
+		sorters[3] = new SelectionSorter(array);
 	}
 
 	public void render() {
@@ -40,11 +44,15 @@ public class Screen implements Runnable {
 		}
 		for (int i = 0; i < array.length; i++) {
 			renderBar(i, array[i]);
+
 		}
 	}
 
 	public synchronized void update() {
-		sorter.update();
+		for (Sorter sorter : sorters) {
+			sorter.update();
+			shuffle(array);
+		}
 	}
 
 	private void renderBar(int location, int size) {
