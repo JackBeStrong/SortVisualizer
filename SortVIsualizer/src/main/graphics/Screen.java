@@ -50,7 +50,7 @@ public class Screen implements Runnable {
 		int yStart = height - size * ySize;
 		int yFinish = height;
 		for (int y = yStart; y < yFinish; y++) {
-			for (int x = xStart; x < xFinish; x++) {
+			for (int x = xStart; x < xFinish - 1; x++) {
 				pixels[x + y * width] = 0xFF6500 + size-1;
 			}
 		}
