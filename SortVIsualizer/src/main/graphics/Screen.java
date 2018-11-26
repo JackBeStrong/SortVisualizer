@@ -61,8 +61,8 @@ public class Screen implements Runnable {
 	}
 
 	private void renderBar(int location, int size) {
-		int xStart = (location - 1) * xSize;
-		int xFinish = location * xSize;
+		int xStart = (location) * xSize;
+		int xFinish = (location + 1) * xSize;
 		int yStart = height - size * ySize;
 		int yFinish = height;
 		for (int y = yStart; y < yFinish; y++) {

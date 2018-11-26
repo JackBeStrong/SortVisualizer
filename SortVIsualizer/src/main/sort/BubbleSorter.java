@@ -1,5 +1,6 @@
 package main.sort;
 
+
 public class BubbleSorter extends Sorter {
 	
 	private int delay = 1;
