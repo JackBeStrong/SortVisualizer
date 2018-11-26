@@ -6,6 +6,7 @@ public class MergeSorter extends Sorter {
 	
 	public MergeSorter(int[] array) {
 		super(array);
+		name = "Merge Sort";
 	}
 
 	public int[] sort(int[] array, int start, int finish) {

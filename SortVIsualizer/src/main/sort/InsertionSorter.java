@@ -4,6 +4,7 @@ public class InsertionSorter extends Sorter {
 
 	public InsertionSorter(int[] array) {
 		super(array);
+		name = "Insertion Sort";
 	}
 
 	@Override

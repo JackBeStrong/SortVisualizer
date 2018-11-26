@@ -2,10 +2,11 @@ package main.sort;
 
 public class SelectionSorter extends Sorter {
 	
-	private int delay = 5;
+	private int delay = 1;
 	
 	public SelectionSorter(int[] array) {
 		super(array);
+		name = "Selection Sort";
 	}
 
 

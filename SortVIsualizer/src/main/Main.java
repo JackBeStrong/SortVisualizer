@@ -1,6 +1,7 @@
 package main;
 
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
@@ -38,7 +39,7 @@ public class Main implements Runnable {
 
 	@Override
 	public void run() {
-		while(running) {
+		while (running) {
 			render();
 		}
 	}
@@ -67,10 +68,11 @@ public class Main implements Runnable {
 		}
 
 		g.drawImage(image, 0, 0, width, height, null);
+		g.setColor(Color.white);
+		g.drawString(screen.currentSorterName(), 5, 25);
 		g.dispose();
 		bs.show();
 	}
-
 
 	public static void main(String[] args) {
 		new Main();

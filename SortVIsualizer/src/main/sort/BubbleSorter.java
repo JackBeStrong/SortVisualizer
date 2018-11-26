@@ -2,10 +2,11 @@ package main.sort;
 
 public class BubbleSorter extends Sorter {
 	
-	private int delay = 5;
+	private int delay = 1;
 	
 	public BubbleSorter(int[] array) {
 		super(array);
+		name = "Bubble Sort";
 	}
 
 	@Override

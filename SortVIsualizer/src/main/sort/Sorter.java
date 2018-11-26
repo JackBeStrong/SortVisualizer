@@ -13,6 +13,7 @@ public abstract class Sorter {
 	private double noteConversionConstant = 127f / 256f;
 	public Synthesizer midiSynth;
 	public MidiChannel mChannel;
+	public String name;
 
 	public int intToNote(int size) {
 		return (int) (size * noteConversionConstant);

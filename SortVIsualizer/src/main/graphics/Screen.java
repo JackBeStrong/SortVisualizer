@@ -11,6 +11,7 @@ import main.sort.Sorter;
 public class Screen implements Runnable {
 
 	private Sorter[] sorters;
+	private Sorter currentSorter;
 	public int[] pixels;
 	public int[] array;
 	private int width;
@@ -49,9 +50,13 @@ public class Screen implements Runnable {
 	}
 
 	public synchronized void update() {
-		for (Sorter sorter : sorters) {
-			sorter.update();
-			shuffle(array);
+
+		for (int i = 0; i < sorters.length; i++) {
+			currentSorter = sorters[i];
+			currentSorter.update();
+			if (i != sorters.length - 1) {
+				shuffle(array);
+			}
 		}
 	}
 
@@ -76,6 +81,11 @@ public class Screen implements Runnable {
 			array[nextRandomIndex] = array[i];
 			array[i] = temp;
 		}
+	}
+
+	// get the name of current sorter
+	public String currentSorterName() {
+		return currentSorter.name;
 	}
 
 	@Override
