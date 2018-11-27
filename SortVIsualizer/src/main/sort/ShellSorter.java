@@ -32,7 +32,7 @@ public class ShellSorter extends Sorter {
 
 		while (!gaps.empty()) {
 			int currentGap = gaps.pop();
-			for (int i = currentGap + 1; i < array.length; i++) {
+			for (int i = currentGap ; i < array.length; i++) {
 
 				int key = array[i];
 				playSound(key, delay);
