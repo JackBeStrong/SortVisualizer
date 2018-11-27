@@ -2,11 +2,11 @@ package main.sort;
 
 public class MergeSorter extends Sorter {
 	
-	private int delay = 30;
+	private int delay = 5;
 	
 	public MergeSorter(int[] array) {
 		super(array);
-		name = "Merge Sort";
+		name = "Merge sort. Delay = " + delay + "ms";
 	}
 
 	public int[] sort(int[] array, int start, int finish) {

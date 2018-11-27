@@ -6,7 +6,7 @@ public class SelectionSorter extends Sorter {
 	
 	public SelectionSorter(int[] array) {
 		super(array);
-		name = "Selection Sort";
+		name = "Selection sort. Delay = " + delay + "ms";
 	}
 
 

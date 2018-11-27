@@ -5,7 +5,9 @@ import java.util.Random;
 import main.sort.BubbleSorter;
 import main.sort.InsertionSorter;
 import main.sort.MergeSorter;
+import main.sort.QuickSorter;
 import main.sort.SelectionSorter;
+import main.sort.ShellSorter;
 import main.sort.Sorter;
 
 public class Screen implements Runnable {
@@ -28,11 +30,13 @@ public class Screen implements Runnable {
 			array[i] = i + 1;
 		}
 		shuffle(array);
-		sorters = new Sorter[4];
-		sorters[0] = new BubbleSorter(array);
+		sorters = new Sorter[6];
+		sorters[0] = new QuickSorter(array);
 		sorters[1] = new InsertionSorter(array);
 		sorters[2] = new MergeSorter(array);
 		sorters[3] = new SelectionSorter(array);
+		sorters[4] = new BubbleSorter(array);
+		sorters[5] = new ShellSorter(array);
 	}
 
 	public void render() {

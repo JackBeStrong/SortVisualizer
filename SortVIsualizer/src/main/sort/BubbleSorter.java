@@ -7,7 +7,7 @@ public class BubbleSorter extends Sorter {
 	
 	public BubbleSorter(int[] array) {
 		super(array);
-		name = "Bubble Sort";
+		name = "Bubble sort. Delay = " + delay + "ms";
 	}
 
 	@Override
